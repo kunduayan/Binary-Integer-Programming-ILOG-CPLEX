@@ -1,4 +1,4 @@
-# Binary-Integer-Programming-CPLEX
+# Binary-Integer-Programming-ILOG-CPLEX
 
 This project is all about optimizing the allocation of delivery agents,delivery vehicles and hubs in an e-commerce supply chain to minimize the total cost associated .
 
