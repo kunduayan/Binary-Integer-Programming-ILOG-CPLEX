@@ -81,9 +81,6 @@ subject to{
     sum(j in hub)sum(s in sorting)
       
       Z[j][s][v]<=1;       
-      
-  
- 
   forall(j in hub)
     cd:
       sum(s in sorting)sum(v in vehicle)
@@ -114,8 +111,7 @@ subject to{
   
   forall(j in hub)
     c2:
-       
-       sum(p in product)sum(i in customer)x[p][i][j]==sum(p in product)sum(s in sorting)sum(v in vehicle)X[p][j][s][v];
+      sum(p in product)sum(i in customer)x[p][i][j]==sum(p in product)sum(s in sorting)sum(v in vehicle)X[p][j][s][v];
         
   //forall(j in hub)
     //c3:
@@ -133,29 +129,18 @@ subject to{
  sum(p in product)sum(i in customer)sum(j in hub)
    x[p][i][j]==p;
    
-        
-        
- 
  sum(p in product)sum(j in hub)sum(s in sorting)sum(v in vehicle)
    X[p][j][s][v]==p;
    
-                
-  
-  forall(p in product)
+ forall(p in product)
     forall(i in customer)
       forall(j in hub)
-        
-        
-          
         x[p][i][j]>=0;        
-    
-
-  forall(p in product)
+ forall(p in product)
     forall(j in hub)
       forall(s in sorting)
         forall( v in vehicle)
-          
-          X[p][j][s][v]>=0;        
+         X[p][j][s][v]>=0;        
   
   forall(i in customer)
     forall(j in hub)
@@ -171,15 +156,9 @@ subject to{
     forall(s in sorting)
       forall(v in vehicle)
         Z[j][s][v]<=y[j];
-
-  
-  
-  
   forall(p in product)
     forall(i in customer)
       forall(j in hub)
-        
-          
         x[p][i][j]<=y[j];
         
  
@@ -225,36 +204,16 @@ subject to{
         X[p][j][s][v]<=Z[j][s][v];                  
  
  
- //forall(j in hub)
-   
-   //sum(s in sorting)sum(v in vehicle)Z[j][s][v]<=sum(p in product)sum(i in customer)x[p][i][j];
+ 
  forall(j in hub)
    forall(p in product)
      sum(i in customer)x[p][i][j]==sum(s in sorting)sum(v in vehicle)Z[j][s][v];
-  
- 
- 
- 
- //forall(j in hub
-   //sum(i in customer)sum(k in agent)z[i][j][k]==sum(s in sorting)sum(v in vehicle)Z[j][s][v];
-
- // in vehicle)X[p][j][s][v];
- 
- 
  forall(i in customer)
    forall(j in hub)
      sum(p in product)x[p][i][j]==sum(k in agent)z[i][j][k];
- 
- 
- 
-   
-  forall(p in product)
+ forall(p in product)
    forall(j in hub)
      sum(i in customer)x[p][i][j]==sum(s in sorting)sum(v in vehicle)X[p][j][s][v];
- 
- 
- 
-
 }
 
 
